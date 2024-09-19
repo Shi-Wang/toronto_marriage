@@ -1,0 +1,58 @@
+---
+title: "Marriage Licenses of Toronto CA"
+subtitle: "Data Analysis of Marriage Licenses in Toronto"
+author: 
+  - Shi Hao Wang
+thanks: "Code and data are available at: https://github.com/chenikabukes/MarriageLicenses"
+date: today
+date-format: long
+abstract: "Data analysis of marriage licenses submitted in the year 2023 in Toronto"
+format: pdf
+number-sections: true
+bibliography: references.bib
+---
+
+```{r}
+#| include: false
+#| warning: false
+#| message: false
+
+library(tidyverse)
+data <- read_csv(here::here("data/analysis_data/analysis_data.csv"))
+
+data |>
+  ggplot(aes(x = date, y = marriage_licenses)) + 
+  geom_point()
+```
+
+
+# Introduction
+
+We use @talia, @OpenDataToronto and @rohan.
+
+The remainder of this paper is structured under @sec-mydata.
+
+
+
+# Data {#sec-mydata}
+
+
+```{r}
+#| label: fig-marriage-licenses
+#| fig-cap: Marriage Licenses in Toronto
+#| echo: false
+data |>
+  ggplot(aes(x = date, y = marriage_licenses)) + 
+  geom_point()
+
+```
+
+There was a spike in marriage licenses submitted after covid 19. Marriage licenses apps were consistent. 
+
+
+\newpage
+
+
+# References
+
+
